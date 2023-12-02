@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap'); 
+:root{
+    --white:#ffffff;
+    --black:#000000;
+    --light-gray:#c2c2c2;
+    --blue:#0a2c45;
+    --dark-blue:#07253a;
+    --red:#f76d6d;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+    background-color: var(--blue);
+    font-family:"Gabarito";
+}
+.container{
+    position: relative;
+    background-color: var(--white);
+    width:18em;
+    padding:2em;
+    border-radius: 0.3em;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.wrapper h1{
+    font-size: 1.1em;
+    color: var(--black);
+    font-weight: bold;
+    font-family: "Gabarito";
+}
+.wrapper .img-qr{
+    visibility: hidden;
+}
+.wrapper .img-qr.active{
+    visibility: visible;
+    margin: 1.5em 0 0 0;
+}
+.wrapper .qr-text{
+    width:16em;
+    height:1.5em;
+    padding:0.3em;
+    border:0.15em solid var(--light-gray);
+    border-radius: 0.3em;
+    font-size:1rem;
+    font-weight: bold;
+    font-family: "Gabarito";
+    color:var(--black);
+    margin: 1em 0 1em 0;
+}
+.wrapper .qr-text::placeholder{
+    color:var(--light-gray);
+}
+.wrapper .qr-text:focus{
+    border:0.15em solid var(--dark-blue);
+}
+.wrapper .qr-text.error{
+    animation:shake 0.1s linear 10;
+    border: 0.15em solid var(--red);
+}
+.wrapper .btn-qr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:11em;
+    height: 3em;
+    padding:1em;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 0.2em;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    border:0.2em solid var(--dark-blue);
+    font-family: "Gabarito";
+}
+.wrapper .btn-qr:hover{
+    color:var(--dark-blue);
+    background-color: var(--white);
+    border:0.2em solid var(--dark-blue);
+    transition:all 0.3s;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0.12em);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(-0.12em);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
